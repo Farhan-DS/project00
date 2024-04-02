@@ -1,13 +1,28 @@
-let percentage: number = 99.99;
-if (percentage >= 90 && percentage <= 99.99) {
-    console.log("A+ Grade");
+class Calculator {
+    add(num1: number, num2: number): number {
+        return num1 + num2;
+    }
+
+    subtract(num1: number, num2: number): number {
+        return num1 - num2;
+    }
+
+    multiply(num1: number, num2: number): number {
+        return num1 * num2;
+    }
+
+    divide(num1: number, num2: number): number {
+        if (num2 === 0) {
+            throw new Error("Cannot divide by zero");
+        }
+        return num1 / num2;
+    }
 }
-else if (percentage >= 80 && percentage <=89.99){
-    console.log("A Grade");
-}
-else if (percentage >= 70 && percentage <=79.99){
-    console.log("B Grade");
-}
-else if (percentage >= 60 && percentage <= 69.99){
-    console.log("C Grade");
-}
+
+// Example usage:
+const calculator = new Calculator();
+
+console.log("Addition:", calculator.add(5, 3));
+console.log("Subtraction:", calculator.subtract(10, 4));
+console.log("Multiplication:", calculator.multiply(6, 2));
+console.log("Division:", calculator.divide(20, 4));
